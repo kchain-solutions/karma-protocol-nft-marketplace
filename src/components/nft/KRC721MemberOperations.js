@@ -123,7 +123,7 @@ const KRC721MemberOperations = ({ collectionAddress }) => {
                             margin="normal"
                             sx={{ width: '100%' }}
                         />
-                        <Link to={"/ipfs-token-uploader/" + collectionAddress} target="_blank" style={linkStyle}><Typography variant='body2' sx={typographyBodyLink}>NFT CID GENERATOR</Typography></Link>
+                        <Link to={"/ipfs-token-uploader/" + collectionAddress} target="_blank" style={linkStyle}><Typography variant='body2' sx={typographyBodyLink}>NFT CID GENERATOR HELPER</Typography></Link>
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
@@ -144,7 +144,7 @@ const KRC721MemberOperations = ({ collectionAddress }) => {
                             margin="normal"
                             sx={{ width: '100%' }}
                         />
-                        <Link to={"/ipfs-token-updater/" + collectionAddress} target="_blank" style={linkStyle}><Typography variant='body2' sx={typographyBodyLink}>UPDATE CID GENERATOR</Typography></Link>
+                        <Link to={"/ipfs-token-updater/" + collectionAddress} target="_blank" style={linkStyle}><Typography variant='body2' sx={typographyBodyLink}>UPDATE CID GENERATOR HELPER</Typography></Link>
                     </Box>
                 </Grid>
                 <Grid item xs={12}>

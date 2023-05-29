@@ -82,6 +82,8 @@ const ConnectButton = () => {
                 }
                 else
                     console.log('ConnectButton.js Please install MetaMask!');
+            }).catch((error) => {
+                console.error("Metamask connection error: ", error);
             });
         } else {
             setAccount(null);

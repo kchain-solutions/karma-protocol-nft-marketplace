@@ -167,6 +167,7 @@ const Invest = () => {
                 autoComplete="off"
                 textAlign={'center'}>
                 <Typography variant='h5' sx={{ marginBottom: 2 }}> COLLECT GOLD KARMA TOKENS</Typography>
+                {process.env.REACT_APP_IS_TEST ? (<Typography variant='body' sx={{ marginBottom: 2 }}> ONLY FOR TEST</Typography>) : null}
                 <TextField
                     label={"Invest"}
                     value={usdc}
