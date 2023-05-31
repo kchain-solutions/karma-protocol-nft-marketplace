@@ -115,9 +115,11 @@ const NftDetail = () => {
     }, [loading]);
 
     useEffect(() => {
-        globalState.ethersProvider.getSigner().then((signer) => {
-            setAccount(signer.address);
-        });
+        if (globalState?.ethersProvider?.getSigner) {
+            globalState.ethersProvider.getSigner().then((signer => {
+                setAccount(signer.address);
+            }));
+        }
         downloadData();
         const id = setInterval(downloadData, 30000);
         setIntervalId(id);

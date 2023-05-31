@@ -34,18 +34,20 @@ const TokenUpdateList = ({ tokenId, collectionAddress }) => {
     const [displayData, setDisplayData] = useState([]);
 
     const downloadData = async () => {
-        const responses = await Promise.all(data.collectionGalleryUpdates.map(async (elem) => {
-            try {
-                const httpUrl = elem?.tokenURI?.replace("ipfs://", process.env.REACT_APP_IPFS_ENDPOINT);
-                const response = await fetch(httpUrl);
-                return await response.json();
-            }
-            catch (error) {
-                console.error('TokenUpdateList: ', error);
-                return null;
-            }
-        }));
-        setDisplayData(responses.filter(response => response !== null));
+        if (data?.collectionGalleryUpdates?.map) {
+            const responses = await Promise.all(data.collectionGalleryUpdates.map(async (elem) => {
+                try {
+                    const httpUrl = elem?.tokenURI?.replace("ipfs://", process.env.REACT_APP_IPFS_ENDPOINT);
+                    const response = await fetch(httpUrl);
+                    return await response.json();
+                }
+                catch (error) {
+                    console.error('TokenUpdateList: ', error);
+                    return null;
+                }
+            }));
+            setDisplayData(responses.filter(response => response !== null));
+        }
     }
 
     useEffect(() => {
@@ -74,10 +76,12 @@ const TokenUpdateList = ({ tokenId, collectionAddress }) => {
                 <TableContainer component={Paper}>
                     <Table style={{ width: '100%' }}>
                         <TableHead>
-                            <TableCell align="right" sx={{ width: '10%' }}><Typography variant="h6">Name</Typography></TableCell>
-                            <TableCell align="right" sx={{ width: '40%' }}><Typography variant="h6">Description</Typography></TableCell>
-                            <TableCell align="right" sx={{ width: '30%' }}><Typography variant="h6">External link</Typography></TableCell>
-                            <TableCell align="right" sx={{ width: '20%' }}><Typography variant="h6">Date</Typography></TableCell>
+                            <TableRow>
+                                <TableCell align="right" sx={{ width: '10%' }}><Typography variant="h6">Name</Typography></TableCell>
+                                <TableCell align="right" sx={{ width: '40%' }}><Typography variant="h6">Description</Typography></TableCell>
+                                <TableCell align="right" sx={{ width: '30%' }}><Typography variant="h6">External link</Typography></TableCell>
+                                <TableCell align="right" sx={{ width: '20%' }}><Typography variant="h6">Date</Typography></TableCell>
+                            </TableRow>
                         </TableHead>
                         <TableBody>
                             {displayData.map((elem, index) => (

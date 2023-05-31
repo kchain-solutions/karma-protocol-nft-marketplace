@@ -7,7 +7,6 @@ yarn-error.log*
 lerna-debug.log*
 .aws-sam/
 artifacts/
-abis/
 generated/
 cache/
 package-lock.json

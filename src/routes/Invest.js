@@ -75,8 +75,6 @@ const Invest = () => {
         const insufficientBalance = "Insufficient USDC Balance";
         const insufficientGLDKRM = "Not enough GLDKRM available";
         const invalidUsdcAmount = "USDC amount can't be zero";
-
-
         if (Number(value) > Number(usdcSignerBalance)) {
             if (!errors.includes(insufficientBalance))
                 errors.push(insufficientBalance);
@@ -167,6 +165,7 @@ const Invest = () => {
                 autoComplete="off"
                 textAlign={'center'}>
                 <Typography variant='h5' sx={{ marginBottom: 2 }}> COLLECT GOLD KARMA TOKENS</Typography>
+                {process.env.REACT_APP_IS_TEST ? (<Typography variant='body' sx={{ marginBottom: 2 }}> ONLY FOR TEST</Typography>) : null}
                 <TextField
                     label={"Invest"}
                     value={usdc}

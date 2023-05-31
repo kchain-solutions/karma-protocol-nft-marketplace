@@ -297,11 +297,15 @@ const IpfsTokenUpdater = () => {
                         </Grid>
                         {cid ? (
                             <Grid item xs={12}>
-                                <Typography variant="body2">UPDATE IPFS LINK: <Link href={process.env.REACT_APP_IPFS_ENDPOINT + cid} target="_blank">{cid}</Link></Typography>
+                                <Box display="flex"
+                                    textAlign="justify"
+                                    justifyContent="center">
+                                    <Typography variant="body2" sx={formFieldStyle}> Please copy the CID and paste it into the 'UPDATE TOKEN GALLERY' text field. This action will enable you to associate it with the NFT.</Typography> </Box>
+                                <Typography variant="body2"><Link href={process.env.REACT_APP_IPFS_ENDPOINT + cid} target="_blank">IPFS CID:</Link>{cid}</Typography>
                             </Grid>) : (null)}
                     </Grid>
                 </Box>
-            </Paper >
+            </Paper>
 
             <Snackbar
                 open={isSnackbarOpen}

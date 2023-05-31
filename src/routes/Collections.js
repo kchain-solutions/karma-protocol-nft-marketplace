@@ -4,6 +4,7 @@ import { Card, CardContent, Typography, Grid, Box, TextField, Pagination, Circul
 import { Link } from 'react-router-dom';
 import { linkStyle, wrapTextStyle } from "../style/muiStyle";
 import GlobalStateContext from "../provider/GlobalState";
+import LastTokensUpdates from "../components/tables/LastTokensUpdates";
 import { debounce } from 'lodash';
 
 
@@ -135,6 +136,9 @@ const Collections = () => {
                             />
                         </Box>
                     </Grid>) : null}
+                <Grid item xs={12}>
+                    <LastTokensUpdates />
+                </Grid>
             </Grid>
         </>
     );

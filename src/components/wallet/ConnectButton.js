@@ -75,14 +75,18 @@ const ConnectButton = () => {
     //Update global state when account change
     const connectWallet = async () => {
         if (!isConnected) {
-            detectEthereumProvider().then((provider) => {
-                console.log('ConnectButton.js metamask provider');
-                if (provider) {
-                    setMetamaskProvider(provider);
-                }
-                else
-                    console.log('ConnectButton.js Please install MetaMask!');
-            });
+            try {
+                detectEthereumProvider().then((provider) => {
+                    console.log('ConnectButton.js metamask provider');
+                    if (provider) {
+                        setMetamaskProvider(provider);
+                    }
+                    else
+                        console.log('ConnectButton.js Please install MetaMask!');
+                });
+            } catch (error) {
+                console.error("Metamask connection error: ", error);
+            }
         } else {
             setAccount(null);
             setMetamaskProvider(null);
