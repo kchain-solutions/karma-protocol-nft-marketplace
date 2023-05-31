@@ -22,6 +22,7 @@ const Footer = () => {
                             <Link href="https://github.com/kchain-solutions/kchain-nft-marketplace" color="inherit" target="_blank" rel="noopener noreferrer">
                                 Karma Contracts
                             </Link>
+                            <br />
                             <Link href="https://kchain.solutions" color="inherit" target="_blank" rel="noopener noreferrer">
                                 Kchain Solutions
                             </Link>

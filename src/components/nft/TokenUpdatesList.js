@@ -76,10 +76,12 @@ const TokenUpdateList = ({ tokenId, collectionAddress }) => {
                 <TableContainer component={Paper}>
                     <Table style={{ width: '100%' }}>
                         <TableHead>
-                            <TableCell align="right" sx={{ width: '10%' }}><Typography variant="h6">Name</Typography></TableCell>
-                            <TableCell align="right" sx={{ width: '40%' }}><Typography variant="h6">Description</Typography></TableCell>
-                            <TableCell align="right" sx={{ width: '30%' }}><Typography variant="h6">External link</Typography></TableCell>
-                            <TableCell align="right" sx={{ width: '20%' }}><Typography variant="h6">Date</Typography></TableCell>
+                            <TableRow>
+                                <TableCell align="right" sx={{ width: '10%' }}><Typography variant="h6">Name</Typography></TableCell>
+                                <TableCell align="right" sx={{ width: '40%' }}><Typography variant="h6">Description</Typography></TableCell>
+                                <TableCell align="right" sx={{ width: '30%' }}><Typography variant="h6">External link</Typography></TableCell>
+                                <TableCell align="right" sx={{ width: '20%' }}><Typography variant="h6">Date</Typography></TableCell>
+                            </TableRow>
                         </TableHead>
                         <TableBody>
                             {displayData.map((elem, index) => (
