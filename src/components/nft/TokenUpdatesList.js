@@ -34,18 +34,20 @@ const TokenUpdateList = ({ tokenId, collectionAddress }) => {
     const [displayData, setDisplayData] = useState([]);
 
     const downloadData = async () => {
-        const responses = await Promise.all(data.collectionGalleryUpdates.map(async (elem) => {
-            try {
-                const httpUrl = elem?.tokenURI?.replace("ipfs://", process.env.REACT_APP_IPFS_ENDPOINT);
-                const response = await fetch(httpUrl);
-                return await response.json();
-            }
-            catch (error) {
-                console.error('TokenUpdateList: ', error);
-                return null;
-            }
-        }));
-        setDisplayData(responses.filter(response => response !== null));
+        if (data?.collectionGalleryUpdates?.map) {
+            const responses = await Promise.all(data.collectionGalleryUpdates.map(async (elem) => {
+                try {
+                    const httpUrl = elem?.tokenURI?.replace("ipfs://", process.env.REACT_APP_IPFS_ENDPOINT);
+                    const response = await fetch(httpUrl);
+                    return await response.json();
+                }
+                catch (error) {
+                    console.error('TokenUpdateList: ', error);
+                    return null;
+                }
+            }));
+            setDisplayData(responses.filter(response => response !== null));
+        }
     }
 
     useEffect(() => {

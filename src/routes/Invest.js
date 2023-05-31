@@ -75,8 +75,6 @@ const Invest = () => {
         const insufficientBalance = "Insufficient USDC Balance";
         const insufficientGLDKRM = "Not enough GLDKRM available";
         const invalidUsdcAmount = "USDC amount can't be zero";
-
-
         if (Number(value) > Number(usdcSignerBalance)) {
             if (!errors.includes(insufficientBalance))
                 errors.push(insufficientBalance);

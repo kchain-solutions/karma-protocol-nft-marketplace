@@ -106,9 +106,11 @@ const TokenOperations = ({ collectionAddress, tokenId, salePrice, tokenOwner, is
     }
 
     useEffect(() => {
-        globalState.ethersProvider.getSigner().then((signer => {
-            setAccount(signer.address);
-        }));
+        if (globalState?.ethersProvider?.getSigner) {
+            globalState.ethersProvider.getSigner().then((signer => {
+                setAccount(signer.address);
+            }));
+        }
     });
 
     const title = <><Grid item xs={12}> <Box textAlign={'center'}><Typography variant="h5" sx={{ marginTop: 2 }}> TOKEN OPERATIONS </Typography></Box></Grid></>

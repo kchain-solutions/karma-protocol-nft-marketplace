@@ -465,11 +465,16 @@ const IpfsTokenUploader = () => {
                         </Grid>
                         {metadataCid ? (
                             <Grid item xs={12}>
-                                <Typography variant="body2">METADATA IPFS LINK: <Link href={process.env.REACT_APP_IPFS_ENDPOINT + metadataCid + "/metadata.json"} target="_blank">{metadataCid}</Link></Typography>
-                            </Grid>) : (null)}
+                                <Box display="flex"
+                                    textAlign="justify"
+                                    justifyContent="center">
+                                    <Typography variant="body2" sx={formFieldStyle}> Please copy the CID and paste it into the 'MINT NEW TOKEN' text field. This action will enable you to associate it with the NFT.</Typography> </Box>
+                                <Typography variant="body2"> <Link href={process.env.REACT_APP_IPFS_ENDPOINT + metadataCid + "/metadata.json"} target="_blank">METADATA IPFS CID:</Link>{metadataCid}</Typography>
+                            </Grid>
+                        ) : (null)}
                     </Grid>
                 </Box>
-            </Paper >
+            </Paper>
 
             <Snackbar
                 open={isSnackbarOpen}
