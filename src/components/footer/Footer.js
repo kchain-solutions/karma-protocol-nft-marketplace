@@ -16,11 +16,11 @@ const Footer = () => {
                         <Box textAlign="right" pt={1}>
                             <Typography variant='h6'> RESOURCES</Typography>
                             <Link href="https://github.com/kchain-solutions/kchain-nft-marketplace" color="inherit" target="_blank" rel="noopener noreferrer">
-                                Marketplace repository
+                                NFT marketplace repository
                             </Link>
                             <br />
-                            <Link href="https://github.com/kchain-solutions/kchain-nft-marketplace" color="inherit" target="_blank" rel="noopener noreferrer">
-                                Karma Contracts
+                            <Link href="https://github.com/kchain-solutions/karma-protocol-contracts" color="inherit" target="_blank" rel="noopener noreferrer">
+                                Marketplace & DAO Contracts
                             </Link>
                             <br />
                             <Link href="https://kchain.solutions" color="inherit" target="_blank" rel="noopener noreferrer">
