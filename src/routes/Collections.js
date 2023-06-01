@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { linkStyle, wrapTextStyle } from "../style/muiStyle";
 import GlobalStateContext from "../provider/GlobalState";
 import LastTokensUpdates from "../components/tables/LastTokensUpdates";
+import LastMintedTokens from "../components/tables/LastMintedTokens";
 import { debounce } from 'lodash';
 
 
@@ -136,6 +137,9 @@ const Collections = () => {
                             />
                         </Box>
                     </Grid>) : null}
+                <Grid item xs={12}>
+                    <LastMintedTokens />
+                </Grid>
                 <Grid item xs={12}>
                     <LastTokensUpdates />
                 </Grid>
