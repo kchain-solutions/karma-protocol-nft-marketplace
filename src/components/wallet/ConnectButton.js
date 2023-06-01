@@ -6,7 +6,6 @@ import { Button } from '@mui/material';
 import ErrorDialog from '../Error/ErrorDialog';
 
 
-
 const ConnectButton = () => {
     const [account, setAccount] = useState(null);
     const [metamaskProvider, setMetamaskProvider] = useState(null);
@@ -20,7 +19,6 @@ const ConnectButton = () => {
         if (accounts.length === 0) {
             console.log('ConnectButton.js Please connect to MetaMask.');
         } else {
-            setMetamaskProvider(await detectEthereumProvider());
             console.log("ConnectButton.js Account connected ", accounts);
             setAccount(accounts[0]);
         }
@@ -29,17 +27,23 @@ const ConnectButton = () => {
     useEffect(() => {
         let provider = null;
         const init = async () => {
-            provider = await detectEthereumProvider();
-            if (provider) {
-                try {
-                    provider.on('accountsChanged', handleAccountsChanged);
-                } catch (error) {
-                    console.error("Connectbutton.js init: ", error);
+            try {
+                provider = await detectEthereumProvider();
+                if (provider) {
+                    try {
+                        provider.on('accountsChanged', handleAccountsChanged);
+                    } catch (error) {
+                        console.error("Connectbutton.js init: ", error);
+                    }
+                } else {
+                    setErrorMessage("Without MetaMask installed, your experience it's compromised.");
+                    setOpenError(true);
+                    console.log('ConnectButton.js Please install MetaMask!');
                 }
-            } else {
-                setErrorMessage("Without MetaMask installed, your experience it's compromised.");
+            } catch (error) {
                 setOpenError(true);
-                console.log('ConnectButton.js Please install MetaMask!');
+                setErrorMessage('Loading page error: ' + error);
+                console.log('Loading page error: ', error);
             }
         };
         init();
