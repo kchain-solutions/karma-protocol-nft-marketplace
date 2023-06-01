@@ -20,7 +20,7 @@ const GET_PURCHASES = gql`
     }
 `;
 
-const LastTokensUpdates = () => {
+const TokenPurchases = () => {
 
     const { loading, error, data } = useQuery(GET_PURCHASES, {
         pollInterval: 30000,
@@ -88,7 +88,7 @@ const LastTokensUpdates = () => {
                                         height: '50px',
                                         overflow: 'hidden',
                                     }}>
-                                        <Link href={"/nft-detail/" + elem.contractAddr + "/" + elem.tokenId}>
+                                        <InternalLink to={"/nft-detail/" + elem.contractAddr + "/" + elem.tokenId} style={{ textDecoration: 'none' }}>
                                             <img
                                                 src={elem.image}
                                                 style={{
@@ -97,11 +97,11 @@ const LastTokensUpdates = () => {
                                                     height: '100%'
                                                 }}
                                             />
-                                        </Link>
+                                        </InternalLink>
                                     </Box>
                                     </TableCell>
-                                    <TableCell align="left"> <Link href={process.env.REACT_APP_BLOCKCHAIN_TX_EXPLORER + elem.transactionHash}> {cutStringAfterChars(elem?.transactionHash, 40)} </Link></TableCell>
-                                    <TableCell align="justify"> {formatUnits(elem?.price, 18)}</TableCell>
+                                    <TableCell align="left"> <Link href={process.env.REACT_APP_BLOCKCHAIN_TX_EXPLORER + elem.transactionHash} target="_blank"> {cutStringAfterChars(elem?.transactionHash, 40)} </Link></TableCell>
+                                    <TableCell align="justify"> {formatUnits(elem?.price, 18)} {process.env.REACT_APP_TX_COIN}</TableCell>
                                     <TableCell align="left">{elem.buyer}</TableCell>
                                     <TableCell align="left">{moment.unix(elem?.blockTimestamp).format('MMMM Do YYYY, h:mm:ss a')}</TableCell>
                                 </TableRow>
@@ -112,7 +112,6 @@ const LastTokensUpdates = () => {
             </Paper>
         ) : null
     );
-
 }
 
-export default LastTokensUpdates;
+export default TokenPurchases;
