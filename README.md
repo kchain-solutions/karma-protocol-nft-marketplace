@@ -133,9 +133,11 @@ Here is the sequence diagram of the use case implemented.
 [28 - 30] Once the minimum threshold is reached, DAO members can stake their claim to the rewards. As previously mentioned, 60% of the rewards are allocated to DAO members, while the remaining 40% is divided among the GLDKRM token holders.
 
 
-## 3. Conclusion
+# Conclusion
 In conclusion, the Karma Protocol represents a significant breakthrough in the realm of blockchain and decentralized applications, integrating the concepts of altruism, rewards, and governance into a unique and efficient ecosystem.
 
 The design and structure of this system, spanning across the Karma Token (KRM), Gold Karma Token (GLDKRM), and a decentralized autonomous organization (DAO), showcase the power of blockchain technology when applied to societal welfare and communal participation. The Karma Protocol's tokenomics, underpinned by the Proof-of-Karma (PoK) mechanism, encapsulates the spirit of earning rewards through genuine societal contributions, as seen through the innovative token burn rate and DAO governance model.
 
 Our solution relies on the time-tested and secure EVM machine and leverages the Solidity programming language, allowing for the protocol to tap into a host of high-market-cap blockchains. Furthermore, the protocol's architectural layers ensure data decentralization, security, and scalability while keeping in mind transaction costs.
+
+For the latest updates on Karma Protocol, please visit our website at [https://earnkarma.io](https://earnkarma.io). To try our application, head over to [https://app.earnkarma.io](https://app.earnkarma.io).
