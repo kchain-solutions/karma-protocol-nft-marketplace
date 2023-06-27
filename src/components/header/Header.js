@@ -117,7 +117,6 @@ const Header = () => {
                             <Link to="/" style={{ ...linkStyle, flexGrow: 1 }}> <Typography variant="h6" sx={{ color: 'primary.main' }}> Collections </Typography> </Link>
                             {adminConsoleLink}
                             {newCollectionLink}
-                            <Box sx={{ flexGrow: 1 }}> <Link to="/invest" style={linkStyle}> <Typography variant="h6" sx={{ color: 'primary.main' }} > Invest </Typography></Link></Box>
                             <ConnectButton />
                         </Toolbar>
                     </AppBar>

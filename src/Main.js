@@ -8,9 +8,7 @@ import CollectionDetail from './routes/CollectionDetail';
 import NftDetail from './routes/NftDetail';
 import IpfsTokenUploader from './routes/IpfsTokenUploader';
 import IpfsTokenUpdater from './routes/IpfsTokenUpdater.js';
-import Invest from './routes/Invest';
-
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 const Main = () => {
     const { globalState } = useContext(GlobalStateContext);
@@ -28,7 +26,6 @@ const Main = () => {
                         <Route path="/nft-detail/:collectionAddress/:tokenId" element={<NftDetail />} />
                         <Route path="/ipfs-token-updater/:collectionAddr" element={<IpfsTokenUpdater />} />
                         <Route path="/ipfs-token-uploader/:collectionAddr" element={<IpfsTokenUploader />} />
-                        <Route path="/invest" element={<Invest />} />
                     </Routes>
                 </>
             );
