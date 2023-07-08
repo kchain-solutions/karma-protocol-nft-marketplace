@@ -10,6 +10,7 @@ import IpfsTokenUploader from './routes/IpfsTokenUploader';
 import IpfsTokenUpdater from './routes/IpfsTokenUpdater.js';
 import { Box } from '@mui/material';
 
+
 const Main = () => {
     const { globalState } = useContext(GlobalStateContext);
     const [content, setContent] = useState(null);

@@ -9,7 +9,7 @@ import LastMintedTokens from "../components/tables/LastMintedTokens";
 import TokenPurchases from "../components/tables/TokensPurchases";
 import { debounce } from 'lodash';
 
-
+import banner from "../img/banner.png";
 
 const GET_NEW_KRC721S = gql`
   query GetNewKRC721S($searchKey: String!) {
@@ -103,13 +103,19 @@ const Collections = () => {
             <Grid container spacing={2} alignItems="center" justifyContent="center" sx={{ marginTop: 2 }} >
                 <Grid item xs={12}>
                     <Box textAlign="center" sx={{ marginBottom: 1 }} >
-                        <Typography variant="h4" > KOLLECTIONS </Typography>
+                        <img
+                            src={banner}
+                            alt=""
+                            style={{
+                                maxWidth: '100%',
+                                maxHeight: '100%%',
+                            }} />
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
                     <Box textAlign="center" sx={{ marginTop: 3, marginBottom: 1 }} >
                         <TextField
-                            label="Search (Name, Symbol)"
+                            label="Kollection Search Bar (Name, Symbol)"
                             value={searchKey}
                             onChange={handleSearchChange}
                             sx={{ width: '100%' }}
